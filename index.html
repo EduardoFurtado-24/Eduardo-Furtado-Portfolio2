@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduardo Miquelissa — Currículo Online</title>
+  <meta name="description" content="Portfólio pessoal de Eduardo Furtado Miquelissa — Tecnologia da Informação, Administração e Logística.">
+
+  <!-- Fontes: Space Grotesk (títulos/manifesto), Inter (corpo de texto), JetBrains Mono (etiquetas de código de rastreio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- ========== CABEÇALHO / MENU FIXO ========== -->
+  <header class="header" id="topo">
+    <div class="header__inner">
+      <a href="#topo" class="header__mark" aria-label="Voltar ao topo">
+        <span class="header__tag">EFM-01</span>
+        <span class="header__name">Eduardo Miquelissa</span>
+      </a>
+
+      <!-- Botão hambúrguer: exibido apenas em telas pequenas via CSS -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPrincipal">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="menuPrincipal">
+        <a href="#sobre" class="nav__link">01 · Sobre mim</a>
+        <a href="#formacao" class="nav__link">02 · Formação</a>
+        <a href="#portfolio" class="nav__link">03 · Portfólio</a>
+        <a href="#contato" class="nav__link">04 · Contato</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
+          <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle__label">Modo escuro</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="hero__manifest">
+        <p class="manifest-code">MANIFESTO Nº EFM-2026-01 · CURITIBA-PR</p>
+        <h1 class="hero__title">Organização, logística<br> e tecnologia<br> em rota de convergência.</h1>
+        <p class="hero__subtitle">
+          Eduardo Furtado Miquelissa. Cursando Análise e Desenvolvimento de Sistemas,
+          com experiência prática em rotinas administrativas e operações logísticas.
+        </p>
+        <a href="#contato" class="hero__cta">Falar comigo →</a>
+      </div>
+      <div class="hero__stamp" aria-hidden="true">
+        <div class="stamp">
+          <span>DESPACHADO</span>
+          <span class="stamp__date">CURITIBA / PR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO: SOBRE MIM ========== -->
+    <section id="sobre" class="section">
+      <div class="section__label">
+        <span class="tag">01</span>
+        <h2>Sobre mim</h2>
+      </div>
+
+      <div class="sobre__grid">
+        <div class="sobre__texto">
+          <p>
+            Sou um profissional organizado e proativo, com experiência consolidada em rotinas
+            administrativas, logística e atendimento ao cliente. Atualmente curso Análise e
+            Desenvolvimento de Sistemas na UNINTER, unindo minha bagagem operacional a
+            conhecimentos técnicos em manutenção de computadores, pacote Office e suporte técnico.
+          </p>
+          <p>
+            Busco crescer justamente na intersecção entre tecnologia e gestão: entender o
+            processo, organizar a informação e construir soluções — sejam elas uma planilha
+            bem estruturada, um fluxo logístico mais eficiente ou, cada vez mais, uma linha de código.
+          </p>
+
+          <ul class="dados-pessoais">
+            <li><span>Cidade</span>Curitiba – PR</li>
+            <li><span>Idade</span>24 anos</li>
+            <li><span>Telefone</span>(41) 99771-2717</li>
+            <li><span>E-mail</span>eduardofmiquelissa@gmail.com</li>
+          </ul>
+        </div>
+
+        <div class="sobre__manifesto">
+          <h3>Ficha de carga — experiência</h3>
+          <ol class="timeline">
+            <li>
+              <span class="timeline__periodo">Atual</span>
+              <strong>Separador Especializado</strong> · Sam's Club
+              <p>Separação e organização de pedidos com controle de estoque; apoio logístico e operacional em ambiente dinâmico.</p>
+            </li>
+            <li>
+              <span class="timeline__periodo">2021 – 2023</span>
+              <strong>Assistente Administrativo</strong> · Ecosystem
+              <p>Gestão de documentos, correspondências e e-mails; compras de materiais internos e apoio às rotinas administrativas.</p>
+            </li>
+            <li>
+              <span class="timeline__periodo">2020 – 2021</span>
+              <strong>Soldado EV – Logística</strong> · Exército Brasileiro
+              <p>Controle de entrada e saída de documentos e digitação; abastecimento de linhas de produção e organização operacional.</p>
+            </li>
+            <li>
+              <span class="timeline__periodo">3 meses</span>
+              <strong>Operador de Loja</strong> · Cobasi
+              <p>Atendimento ao cliente e organização de produtos.</p>
+            </li>
+            <li>
+              <span class="timeline__periodo">4 meses</span>
+              <strong>Repositor</strong> · Atacadão
+              <p>Reposição, precificação e controle de mercadorias.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="competencias">
+        <h3>Competências</h3>
+        <div class="chips">
+          <span class="chip">Pacote Office</span>
+          <span class="chip">Rotinas administrativas</span>
+          <span class="chip">Organização logística</span>
+          <span class="chip">Trabalho em equipe</span>
+          <span class="chip">Aprendizado rápido</span>
+          <span class="chip">Suporte técnico</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO: FORMAÇÃO ========== -->
+    <section id="formacao" class="section section--alt">
+      <div class="section__label">
+        <span class="tag">02</span>
+        <h2>Formação</h2>
+      </div>
+
+      <div class="formacao__colunas">
+        <div>
+          <h3>Formação acadêmica</h3>
+          <ul class="lista-formacao">
+            <li>
+              <div class="lista-formacao__topo">
+                <strong>Análise e Desenvolvimento de Sistemas</strong>
+                <span class="status status--cursando">Cursando</span>
+              </div>
+              <p>UNINTER</p>
+            </li>
+            <li>
+              <div class="lista-formacao__topo">
+                <strong>Técnico em Administração</strong>
+                <span class="status status--concluido">Concluído</span>
+              </div>
+              <p>SENAI</p>
+            </li>
+            <li>
+              <div class="lista-formacao__topo">
+                <strong>Ensino Médio</strong>
+                <span class="status status--concluido">2018</span>
+              </div>
+              <p>Colégio Estadual Newton Ferreira da Costa</p>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Cursos e certificações</h3>
+          <ul class="lista-cursos">
+            <li><strong>Expert em TI</strong> — Elaborata Informática <span>100h</span></li>
+            <li><strong>Competências para Profissões do Futuro</strong> — SENAI <span>60h</span></li>
+            <li><strong>Desenvolvimento de Habilidades Pessoais e Empreendedoras</strong> — FAS <span>56h</span></li>
+            <li><strong>Manutenção de Notebooks e Smartphones</strong> — FAS <span>36h</span></li>
+            <li><strong>Português, Matemática, Informática e Empreendedorismo</strong> — SENAI <span>242h</span></li>
+            <li><strong>Introdução ao Trabalho Voluntário</strong> — AVA <span>16h</span></li>
+            <li><strong>Introdução ao Mundo dos Negócios</strong> — Junior Achievement <span>12h</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO: PORTFÓLIO ========== -->
+    <section id="portfolio" class="section">
+      <div class="section__label">
+        <span class="tag">03</span>
+        <h2>Portfólio</h2>
+      </div>
+
+      <p class="portfolio__intro">
+        Projetos práticos desenvolvidos durante minha formação em Análise e Desenvolvimento de Sistemas.
+        <!-- Aluno: substitua os itens abaixo pelos seus próprios projetos e links reais assim que estiverem prontos. -->
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <span class="card__codigo">PRJ-001</span>
+          <h3>Currículo Online — este site</h3>
+          <p>Portfólio pessoal desenvolvido em HTML5, CSS3 e JavaScript puro, sem frameworks,
+             como atividade prática da disciplina de Fundamentos da Programação Web.</p>
+          <a href="https://github.com/" class="card__link" target="_blank" rel="noopener">Ver repositório →</a>
+        </article>
+
+        <article class="card card--placeholder">
+          <span class="card__codigo">PRJ-002</span>
+          <h3>Próximo projeto</h3>
+          <p>Espaço reservado para o próximo trabalho do curso de ADS — substitua por um projeto
+             real assim que concluído (ex: sistema de controle de estoque, app de organização de tarefas).</p>
+          <span class="card__link card__link--disabled">Em desenvolvimento</span>
+        </article>
+
+        <article class="card card--placeholder">
+          <span class="card__codigo">PRJ-003</span>
+          <h3>Próximo projeto</h3>
+          <p>Reserve este espaço para um projeto que conecte tecnologia e logística —
+             sua área de maior experiência prática.</p>
+          <span class="card__link card__link--disabled">Em desenvolvimento</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO: CONTATO ========== -->
+    <section id="contato" class="section section--alt">
+      <div class="section__label">
+        <span class="tag">04</span>
+        <h2>Contato</h2>
+      </div>
+
+      <div class="contato__grid">
+        <div class="contato__info">
+          <p>Vamos conversar sobre oportunidades em tecnologia, administração ou logística.
+             Preencha o formulário ou fale diretamente pelos canais abaixo.</p>
+          <ul>
+            <li><span>E-mail</span>eduardofmiquelissa@gmail.com</li>
+            <li><span>Telefone</span>(41) 99771-2717</li>
+            <li><span>Local</span>Curitiba – PR</li>
+          </ul>
+        </div>
+
+        <form id="formContato" class="form" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+            <span class="erro" id="erroNome"></span>
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" placeholder="seuemail@dominio.com">
+            <span class="erro" id="erroEmail"></span>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+            <span class="erro" id="erroMensagem"></span>
+          </div>
+
+          <button type="submit" class="botao-enviar">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Eduardo Furtado Miquelissa · Curitiba – PR · <span id="anoAtual"></span></p>
+  </footer>
+
+  <!-- ========== MODAL DE CONFIRMAÇÃO (usado pelo JS para simular envio) ========== -->
+  <div class="modal" id="modalConfirmacao" role="alertdialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+    <div class="modal__caixa">
+      <p class="modal__selo" aria-hidden="true">✓</p>
+      <h3 id="modalTitulo">Mensagem enviada com sucesso!</h3>
+      <p>Obrigado pelo contato. Retornarei o mais breve possível.</p>
+      <button type="button" class="botao-enviar" id="fecharModal">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

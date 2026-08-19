@@ -1,0 +1,472 @@
+/* ==========================================================================
+   TOKENS — paleta, tipografia e espaçamento
+   Conceito: "manifesto de carga" — remete à experiência do Eduardo em
+   logística, unida a uma identidade técnica (IT / sistemas).
+   ========================================================================== */
+:root {
+  /* Paleta modo escuro (padrão) */
+  --cor-fundo: #14181d;
+  --cor-superficie: #1e242b;
+  --cor-superficie-alt: #191e24;
+  --cor-borda: #333b44;
+  --cor-texto: #e8e6df;
+  --cor-texto-suave: #a9b0b8;
+  --cor-acento: #e8a23d;      /* âmbar — etiqueta de manifesto */
+  --cor-acento-2: #4a7c82;    /* verde-azulado — tecnologia */
+  --cor-perigo: #d9695f;
+
+  --fonte-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --fonte-corpo: 'Inter', 'Segoe UI', sans-serif;
+  --fonte-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --raio: 4px;
+  --largura-max: 1120px;
+  --transicao: 0.2s ease;
+}
+
+/* Paleta modo claro */
+body.tema-claro {
+  --cor-fundo: #f3f1ea;
+  --cor-superficie: #ffffff;
+  --cor-superficie-alt: #ece8dc;
+  --cor-borda: #d8d2c2;
+  --cor-texto: #1c1f22;
+  --cor-texto-suave: #5a5f63;
+  --cor-acento: #b9740f;
+  --cor-acento-2: #2f6066;
+}
+
+/* ==========================================================================
+   RESET BÁSICO
+   ========================================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-corpo);
+  line-height: 1.6;
+  transition: background var(--transicao), color var(--transicao);
+}
+
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: var(--fonte-display); line-height: 1.15; }
+
+/* Foco visível para acessibilidade via teclado */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   CABEÇALHO / MENU (visível em todas as seções — navegação por âncoras)
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20, 24, 29, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cor-borda);
+}
+body.tema-claro .header { background: rgba(243, 241, 234, 0.92); }
+
+.header__inner {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header__mark { display: flex; align-items: baseline; gap: 0.5rem; }
+.header__tag {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  color: var(--cor-acento);
+  border: 1px solid var(--cor-acento);
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--raio);
+}
+.header__name { font-family: var(--fonte-display); font-weight: 700; font-size: 1.05rem; }
+
+.nav { display: flex; align-items: center; gap: 1.6rem; }
+.nav__link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  transition: color var(--transicao);
+  white-space: nowrap;
+}
+.nav__link:hover { color: var(--cor-acento); }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--raio);
+  cursor: pointer;
+  transition: border-color var(--transicao);
+}
+.theme-toggle:hover { border-color: var(--cor-acento); }
+
+/* Botão hambúrguer — escondido no desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  margin: 0 auto;
+  background: var(--cor-texto);
+  transition: transform var(--transicao), opacity var(--transicao);
+}
+/* Estado aberto: transforma em "X" (classe alternada via JS) */
+.menu-toggle.aberto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.aberto span:nth-child(2) { opacity: 0; }
+.menu-toggle.aberto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 2rem;
+}
+
+.manifest-code {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--cor-acento);
+  margin-bottom: 1.2rem;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  max-width: 16ch;
+  margin-bottom: 1.4rem;
+}
+
+.hero__subtitle {
+  color: var(--cor-texto-suave);
+  max-width: 46ch;
+  font-size: 1.05rem;
+  margin-bottom: 1.8rem;
+}
+
+.hero__cta {
+  display: inline-block;
+  background: var(--cor-acento);
+  color: #14181d;
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--raio);
+  transition: transform var(--transicao);
+}
+.hero__cta:hover { transform: translateX(3px); }
+
+/* "Selo" decorativo lembrando um carimbo de despacho de carga */
+.hero__stamp { display: flex; align-items: flex-start; padding-top: 0.5rem; }
+.stamp {
+  border: 3px solid var(--cor-acento-2);
+  color: var(--cor-acento-2);
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-12deg);
+  font-family: var(--fonte-mono);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+.stamp__date { font-size: 0.65rem; margin-top: 0.3rem; opacity: 0.85; }
+
+/* ==========================================================================
+   SEÇÕES — estrutura comum
+   ========================================================================== */
+.section {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+  scroll-margin-top: 4.5rem; /* compensa o header fixo ao navegar por âncora */
+}
+.section--alt { background: var(--cor-superficie-alt); max-width: 100%; }
+.section--alt > * { max-width: var(--largura-max); margin-left: auto; margin-right: auto; }
+.section--alt { padding-left: 0; padding-right: 0; }
+.section--alt .section__label,
+.section--alt .formacao__colunas,
+.section--alt .contato__grid { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+.section__label { display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 2.4rem; }
+.tag {
+  font-family: var(--fonte-mono);
+  color: var(--cor-acento);
+  border: 1px solid var(--cor-borda);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--raio);
+  font-size: 0.85rem;
+}
+.section__label h2 { font-size: 1.7rem; }
+
+/* ---- Sobre mim ---- */
+.sobre__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; }
+.sobre__texto p { margin-bottom: 1rem; color: var(--cor-texto-suave); }
+
+.dados-pessoais { margin-top: 1.5rem; border-top: 1px solid var(--cor-borda); padding-top: 1rem; }
+.dados-pessoais li {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--cor-borda);
+}
+.dados-pessoais li span { color: var(--cor-texto-suave); }
+
+.sobre__manifesto h3 { font-size: 1rem; margin-bottom: 1.1rem; color: var(--cor-acento); }
+.timeline { border-left: 2px solid var(--cor-borda); }
+.timeline li { position: relative; padding: 0 0 1.5rem 1.4rem; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -5px; top: 4px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cor-acento);
+}
+.timeline__periodo {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.2rem;
+}
+.timeline strong { font-size: 0.95rem; }
+.timeline p { color: var(--cor-texto-suave); font-size: 0.88rem; margin-top: 0.25rem; }
+
+.competencias { margin-top: 3rem; }
+.competencias h3 { font-size: 1rem; margin-bottom: 1rem; color: var(--cor-acento); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.chip {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  border: 1px solid var(--cor-borda);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  color: var(--cor-texto-suave);
+}
+
+/* ---- Formação ---- */
+.formacao__colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.formacao__colunas h3 { font-size: 1rem; margin-bottom: 1.1rem; color: var(--cor-acento); }
+
+.lista-formacao li {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.8rem;
+  background: var(--cor-superficie);
+}
+.lista-formacao__topo { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; }
+.lista-formacao p { color: var(--cor-texto-suave); font-size: 0.85rem; margin-top: 0.25rem; }
+
+.status {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.status--cursando { background: rgba(232, 162, 61, 0.15); color: var(--cor-acento); }
+.status--concluido { background: rgba(74, 124, 130, 0.18); color: var(--cor-acento-2); }
+
+.lista-cursos li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.88rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--cor-borda);
+  color: var(--cor-texto-suave);
+}
+.lista-cursos strong { color: var(--cor-texto); font-weight: 500; }
+.lista-cursos span { font-family: var(--fonte-mono); font-size: 0.75rem; flex-shrink: 0; }
+
+/* ---- Portfólio ---- */
+.portfolio__intro { color: var(--cor-texto-suave); max-width: 60ch; margin-bottom: 2.2rem; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+.card {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.4rem;
+  background: var(--cor-superficie);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.card--placeholder { opacity: 0.7; border-style: dashed; }
+.card__codigo { font-family: var(--fonte-mono); font-size: 0.72rem; color: var(--cor-acento); }
+.card h3 { font-size: 1.05rem; }
+.card p { color: var(--cor-texto-suave); font-size: 0.88rem; flex-grow: 1; }
+.card__link { font-family: var(--fonte-mono); font-size: 0.82rem; color: var(--cor-acento-2); margin-top: 0.4rem; }
+.card__link--disabled { color: var(--cor-texto-suave); cursor: default; }
+
+/* ---- Contato ---- */
+.contato__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; }
+.contato__info p { color: var(--cor-texto-suave); margin-bottom: 1.4rem; }
+.contato__info ul li {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--cor-borda);
+}
+.contato__info ul li span { display: block; color: var(--cor-texto-suave); font-size: 0.7rem; margin-bottom: 0.15rem; }
+
+.form { display: flex; flex-direction: column; gap: 1.1rem; }
+.campo { display: flex; flex-direction: column; gap: 0.4rem; }
+.campo label { font-size: 0.85rem; font-weight: 500; }
+.campo input, .campo textarea {
+  font-family: var(--fonte-corpo);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 0.7rem 0.85rem;
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color var(--transicao);
+}
+.campo input:focus, .campo textarea:focus { border-color: var(--cor-acento); outline: none; }
+.campo input.invalido, .campo textarea.invalido { border-color: var(--cor-perigo); }
+.erro { font-size: 0.78rem; color: var(--cor-perigo); min-height: 1em; }
+
+.botao-enviar {
+  align-self: flex-start;
+  background: var(--cor-acento);
+  color: #14181d;
+  border: none;
+  font-weight: 600;
+  font-family: var(--fonte-corpo);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--raio);
+  cursor: pointer;
+  transition: transform var(--transicao);
+}
+.botao-enviar:hover { transform: translateX(3px); }
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--cor-texto-suave);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* ==========================================================================
+   MODAL DE CONFIRMAÇÃO
+   ========================================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1rem;
+}
+.modal[hidden] { display: none; }
+.modal__caixa {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 2.2rem;
+  max-width: 360px;
+  text-align: center;
+}
+.modal__selo {
+  width: 48px; height: 48px;
+  line-height: 48px;
+  border-radius: 50%;
+  background: var(--cor-acento-2);
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0 auto 1rem;
+}
+.modal__caixa h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.modal__caixa p { color: var(--cor-texto-suave); font-size: 0.88rem; margin-bottom: 1.4rem; }
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__stamp { display: none; }
+  .sobre__grid, .formacao__colunas, .contato__grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .menu-toggle { display: flex; }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transicao);
+  }
+  .nav.aberto { max-height: 400px; }
+  .nav__link {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+  }
+  .theme-toggle { margin: 0.9rem 1.5rem 1.2rem; }
+}
